@@ -1,4 +1,4 @@
-package co.elastic;
+package demo.elastic;
 
 import com.google.genai.Client;
 import com.google.genai.types.GenerateContentResponse;

@@ -1,4 +1,4 @@
-package co.elastic;
+package demo.elastic;
 
 import java.util.List;
 import java.util.Map;
