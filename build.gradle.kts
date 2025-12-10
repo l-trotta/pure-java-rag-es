@@ -14,7 +14,3 @@ dependencies {
     implementation("org.springframework.ai:spring-ai-pdf-document-reader:1.1.0")
     implementation("com.google.genai:google-genai:1.29.0")
 }
-
-tasks.test {
-    useJUnitPlatform()
-}
