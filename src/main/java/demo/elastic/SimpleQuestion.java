@@ -14,6 +14,6 @@ public class SimpleQuestion {
                 GOOGLE_CHAT_MODEL,
                 "",
                 null);
-        System.out.println(response.toString());
+        System.out.println(response.text().toString());
     }
 }
