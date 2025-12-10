@@ -10,8 +10,8 @@ public class SimpleQuestion {
         GenerateContentResponse response =
             client.models.generateContent(
                 "gemini-2.5-flash",
-                "",
+                "question here",
                 null);
-        System.out.println(response.toString());
+        System.out.println(response.text().toString());
     }
 }

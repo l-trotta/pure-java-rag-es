@@ -39,7 +39,7 @@ public class EmbedData {
             List<VectorData> docs = new ArrayList<>();
 
             for (Document document : docbatch) {
-                System.out.println("Embedding document: " + document.getMetadata());
+                System.out.println("Embedding document: " + document.getMetadata().get("page_number"));
                 EmbedContentResponse resp = googleClient.models.embedContent("gemini-embedding-001",
                     document.getText(), EmbedContentConfig.builder().build());
 

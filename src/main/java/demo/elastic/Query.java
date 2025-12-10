@@ -28,8 +28,11 @@ public class Query {
             EmbedContentResponse resp = googleClient.models.embedContent("gemini-embedding-001", "question here",
                 EmbedContentConfig.builder().build());
 
+            List<Float> queryEmbedding = resp.embeddings()
+                .orElseThrow(() -> new RuntimeException("couldn't get embeddings"))
+                .getFirst().values()
+                .orElseThrow(() -> new RuntimeException("couldn't get embeddings"));
 
-            List<Float> queryEmbedding = resp.embeddings().get().getFirst().values().get();
 
             // knn semantic query
             SearchResponse<VectorData> esResult = elasticsearchClient
@@ -40,8 +43,7 @@ public class Query {
                                 .queryVector(queryEmbedding)
                                 .field("vector")
                                 .k(3)
-                                .numCandidates(100)
-                                .similarity(0.3F)
+                                .similarity(0.6F)
                             )
                         )
                     , VectorData.class);
@@ -68,7 +70,7 @@ public class Query {
                     "gemini-2.5-flash",
                     prompt,
                     null);
-            System.out.println(response.toString());
+            System.out.println(response.text().toString());
 
 
         } catch (IOException e) {
