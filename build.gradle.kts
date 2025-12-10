@@ -2,7 +2,7 @@ plugins {
     id("java")
 }
 
-group = "co.elastic"
+group = "demo.elastic"
 version = "1.0-SNAPSHOT"
 
 repositories {

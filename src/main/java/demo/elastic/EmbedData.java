@@ -1,4 +1,4 @@
-package co.elastic;
+package demo.elastic;
 
 public class EmbedData {
 
